@@ -23,9 +23,6 @@
 ; For more infromation, see the lab manual!
         	
 SECTION .data
-	result:	db	16
-	LOAD_OFF:	 db 1
-	STORE_OFF:	db   1
 
 	SECTION .text
 	ALIGN	16
@@ -47,7 +44,7 @@ RES_OFF	EQU     24	; Offset from EBP to result array pointer
 	GLOBAL llmultiply
 
 Main:
-	MOV [STORE_OFF],0
+
 	
 	
 	;; register etc innan	
@@ -56,11 +53,9 @@ First4B:
 	MOV ESI, AL_OFF 
 	MOV EDI, BL_OFF
 	CALL llmultiply		//EDX:EAX   motsvarar nu (AL*BL)
-	MOVE EBX, EAX		// vill lagra (AL*BL)L
+	MOVE EBX, EAX		//  lagrar (AL*BL)L i EBX
 	
-	MOV ESI,STORE_OFFSET
-	CALL store4B
-	ADD STORE_OFFSET,4
+	
 Second4B:
 	
 	MOV ESI, AL_OFF
@@ -98,8 +93,22 @@ add4B:
 llmultiply:
 	PUSH EBP	
 	MOV EBP, ESP
+	MOV EDC,0
 	
-	MOV EDX, [EBP+ESI]
+	MOV BL,0
+	MOV EXC,0
+loop1:	
+
+	MOV EDC, [EBP+(ESI+BL)] //räknas BL som bit eller byte
+
+	ADD EDX, EDC
+	
+	inc BL
+	CMP BL,4
+	JNE
+
+
+	
 	MOV EAX,[EBP+EDI]
 	MUL EAX
 	
