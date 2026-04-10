@@ -21,10 +21,11 @@
 ;           AL * BL
 
 ; For more infromation, see the lab manual!
-        
-	SECTION .data
-	term1	DW	
-
+        	
+SECTION .data
+	result:	db	16
+	LOAD_OFF:	 db 1
+	STORE_OFF:	db   1
 
 	SECTION .text
 	ALIGN	16
@@ -40,86 +41,107 @@ AH_OFF	EQU     12	; Offset from EBP to high bits of a (AH)
 BL_OFF	EQU     16	; Offset from EBP to low  bits of b (BL)
 BH_OFF	EQU     20	; Offset from EBP to high bits of b (BH)
 RES_OFF	EQU     24	; Offset from EBP to result array pointer
+	
 	;;    ^^^^^ Replace 0 with correct values above
         
 	GLOBAL llmultiply
 
-		
-llmultiply:
-	MOV BL, AL_OFF
-	MOV BH, BL_OFF
-	call Multiply 
-	//(AL*BL)= EDX:EAX
-	pop EAX
+Main:
+	MOV [STORE_OFF],0
+	
+	
+	;; register etc innan	
+	;; load offset
+First4B:	
+	MOV ESI, AL_OFF 
+	MOV EDI, BL_OFF
+	CALL llmultiply		//EDX:EAX   motsvarar nu (AL*BL)
+	MOVE EBX, EAX		// vill lagra (AL*BL)L
+	
+	MOV ESI,STORE_OFFSET
+	CALL store4B
+	ADD STORE_OFFSET,4
+Second4B:
+	
+	MOV ESI, AL_OFF
+	MOV EDI, BL_OFF
+	CALL llmultiply
+	MOV EBX, EDX  		// EBX motsvar nu (AL*BL)H
+
+	MOV ESI, AL_OFF
+	MOV EDI, BH_OFF
+	CALL llmultiply
+	MOV ECX, EAX		// EXC motsvarar nu (AL*BH)L
+	CALL add4B              //ECX:EBX  motsvarar nu  (ECX+EBX)
+
+	CMP //vilka register har vi tillgång till?  (EAX,EDX används till matte,  ECX och EBX till temp lagring, ESP och ESI till pekare)
+	
+	CALL add4B
+
 
 	
-	call
-	
-	MOV BL+4
-	call store4B
-	
 
 	
-	
-Multiply:
+	RET
+
+add4B:
 	PUSH EBP
-	MOV ESP, EBP
+	MOV EBP,ESP
 
-	MOV EAX, [EBP+ BL] 
-	MUL DWORD[EBP+BH]	//(AL*BL)= EDX:EAX
-
+	ADD EBX,ECX  //sätts carry flagga här om båda full?
+	ADC ECX
+	
 	POP EBP
-	ret
+	RET
 
-
-
+	
+llmultiply:
+	PUSH EBP	
+	MOV EBP, ESP
+	
+	MOV EDX, [EBP+ESI]
+	MOV EAX,[EBP+EDI]
+	MUL EAX
+	
+	POP EBP				; restore EBP reg
+	RET				;  return
 	
 store4B:
-	PUSH EBP
-	MOV ESP, EBP
-	
-	MOV EBX,[EBP+RES_OFF+] 	;; hämta resultat arrays address
-	MOV [EBX], EAX ;; ladda in resultat (AL*BL)L i resultat array
+	push EBP
+	MOV EBP, ESP
 
-	POP EBP
-	ret
+	MOV [RESULT+ESI],EAX 
 
-
-
+	pop EBP
+	RET
 	
 
-
-
-	MOV ESI, EDX  // ESI = (AL*BL)H
 	
-
-		;; hämtar ut parameter ut stack
-	MOV EAX, [EBP+ AH_OFF]
-	MUL DWORD[EBP+ BL_OFF] 	//(AH*BL)= EDX:EAX
 	
+	;; EDX motsvarar (AL * BL)H  vill lagra (AL*BH)L + (AH*BL)L + (AL * BL)H  i [RESULT+4]
+	;; hur kan ADC användas för summera med carry?
+	MOV EAX,[EBP+BH_OFF]
+	MUL EAX, EBX		; ECX= AL EAX=BH
+	ADC EAX, EDX 		;(AL*BH)L+ (AL * BL)H
+	MOV EAX, EBX  		;lagra delresult i EBX
 
-	ADD EAX, ESI	//EAX= (AH*BL)L + (AL*BL)H
-	ADC ECX, 0	  ;ECX används alltid till carry
 
 	
-	mov ESI, EAX // place EAX in ESI  // (AH*BL)L + (AL*BL)H 
-
-	MOV EAX, [EBP+ AL_OFF]
-	MOV EDX, [EBP+ BH_OFF]
-	MUL EDX  //(AL*BH)= EDX:EAX
-
-	ADD EAX, ESI //// (AH*BL)L + (AL*BL)H +(BH*AL)L
-	ADC ECX, 0	  // if two carry then its two?
-
-	;; ladda in resultat i resultat array
-	MOV [EBX+4], EAX
-	MOV ESI, EDX// (AL*BH)H
+	MOV 
 	
-	ADD ESI,ECX //AL*BH+carry
-	ADC EDI,0
-	MOV ECX,EDI //Clears the preivous ECX AND add potenial carry
+	ADC EDX,[ 
+	
+
+	;; MOV [RESULT+4],
+
+
 
 	
+	MOV EAX,
+
+	
+	;; Put your implementation here
+
 
 	POP EBP				; restore EBP reg
 	RET				;  return
