@@ -12,24 +12,15 @@
 ;  void llmultiply(unsigned long long int l1,
 ;                  unsigned long long int l2,
 ;                  unsigned char *result);
-        
-;  a = AH * (2 << 32) + AL
-;  b = BH * (2 << 32) + BL
-;        
-;  a * b = (AH * BH            * (2 << 64)) +
-;          (AH * BL + AL * BH) * (2 << 32)  +
-;           AL * BL
 
-; For more infromation, see the lab manual!
         
 	SECTION .data
-	term1	DW	
 
 
 	SECTION .text
 	ALIGN	16
 	BITS	32
-
+	
 	;; To access parameter BH on the stack you do
 	;;   MOV EAX, [EBP + 20]
 	;; Replace the zero below with the correct value to be able
@@ -44,82 +35,91 @@ RES_OFF	EQU     24	; Offset from EBP to result array pointer
         
 	GLOBAL llmultiply
 
-		
 llmultiply:
-	MOV BL, AL_OFF
-	MOV BH, BL_OFF
-	call Multiply 
-	//(AL*BL)= EDX:EAX
-	pop EAX
-
-	
-	call
-	
-	MOV BL+4
-	call store4B
-	
-
-	
-	
-Multiply:
 	PUSH EBP
-	MOV ESP, EBP
+	MOV EBP, ESP
 
-	MOV EAX, [EBP+ BL] 
-	MUL DWORD[EBP+BH]	//(AL*BL)= EDX:EAX
-
-	POP EBP
-	ret
-
-
-
-	
-store4B:
-	PUSH EBP
-	MOV ESP, EBP
-	
-	MOV EBX,[EBP+RES_OFF+] 	;; hämta resultat arrays address
-	MOV [EBX], EAX ;; ladda in resultat (AL*BL)L i resultat array
-
-	POP EBP
-	ret
-
-
-
+	PUSH EAX
+	PUSH EBX
+	PUSH ECX
+	PUSH EDX
+	PUSH ESI
+	PUSH EDI
+	XOR ECX,ECX
 	
 
 
+	;; hämtar ut parameter ut stack
+	MOV EAX,[EBP+AL_OFF]
+	MOV EDX,[EBP+BL_OFF]
+	MUl EDX
 
-	MOV ESI, EDX  // ESI = (AL*BL)H
+
 	
+	;; hämta resultat arrays address
+	mov EBX,[EBP+RES_OFF]
+	
+	;; ladda in resultat (AL*BL)L i resultat array
+	MOV [EBX],EAX
 
-		;; hämtar ut parameter ut stack
+	 MOV ESI, EDX
+
+
+	
+	;; hämtar ut parameter ut stack
 	MOV EAX, [EBP+ AH_OFF]
-	MUL DWORD[EBP+ BL_OFF] 	//(AH*BL)= EDX:EAX
+	MOV EDX,[EBP+ BL_OFF]
+	MUL EDX  
+
+	ADD ESI, EAX 
+	ADC ECX, 0	;ECX används alltid till carry
+	MOV EDI,EDX
+
 	
-
-	ADD EAX, ESI	//EAX= (AH*BL)L + (AL*BL)H
-	ADC ECX, 0	  ;ECX används alltid till carry
-
-	
-	mov ESI, EAX // place EAX in ESI  // (AH*BL)L + (AL*BL)H 
-
 	MOV EAX, [EBP+ AL_OFF]
 	MOV EDX, [EBP+ BH_OFF]
-	MUL EDX  //(AL*BH)= EDX:EAX
+	MUL EDX
 
-	ADD EAX, ESI //// (AH*BL)L + (AL*BL)H +(BH*AL)L
-	ADC ECX, 0	  // if two carry then its two?
+	ADD EAX, ESI 
+	ADC ECX, 0	
 
 	;; ladda in resultat i resultat array
 	MOV [EBX+4], EAX
-	MOV ESI, EDX// (AL*BH)H
-	
-	ADD ESI,ECX //AL*BH+carry
-	ADC EDI,0
-	MOV ECX,EDI //Clears the preivous ECX AND add potenial carry
+	MOV ESI, EDX
 
 	
+;; second 32
 
+	
+	ADD ESI,ECX 
+	XOR ECX,ECX
+	ADC ECX,0
+
+	ADD EDI, ESI
+	ADC ECX, 0	  
+	mov ESI, EDI 
+
+	MOV EAX, [EBP+ AH_OFF]
+	MOV EDX,[EBP+ BH_OFF]
+	MUL EDX 
+
+	ADD EAX, ESI
+	ADC ECX, 0
+	MOV [EBX+8], EAX
+
+	 ;;third done
+
+	
+	ADD EDX,ECX 
+	MOV [EBX+12], EDX 
+
+	POP EDI
+	POP ESI
+	POP EDX
+	POP ECX
+	POP EBX
+	pop EAX
+	
 	POP EBP				; restore EBP reg
 	RET				;  return
+
