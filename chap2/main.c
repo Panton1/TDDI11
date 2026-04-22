@@ -1,8 +1,63 @@
 #include <libepc.h>
 
+//void llllmultiply(unsigned long long int l1,unsigned long long int l2, unsigned char *result);
+
 void llmultiply(unsigned long long int l1,
-                unsigned long long int l2,
-                unsigned char *result);
+		unsigned long long int l2,
+		unsigned char *result);
+
+void cmultiply(unsigned long long int a, unsigned long long int b, unsigned char *result){
+  unsigned long long int maskLow4B=0x00000000FFFFFFFF;
+  unsigned long long int maskHigh4B=0xFFFFFFFF00000000;
+    
+  /* unsigned long int ALow=((a<<32)>>32); */
+  /* unsigned long int AHigh=(a>>32); */
+  /* unsigned long int BLow=((b<<32)>>32); */
+  /* unsigned long int BHigh=(b>>32); */
+
+  unsigned long long int ALow=a & maskLow4B;
+  unsigned long long int AHigh=a & maskHigh4B;
+  unsigned long long int BLow=b & maskLow4B;
+  unsigned long long int BHigh=b & maskHigh4B;
+  // -------------///
+
+  unsigned long long int AL_BL=ALow*BLow;
+  unsigned long long int AL_BH=ALow*BHigh;
+  unsigned long long int AH_BL=AHigh*BLow;
+  // unsigned long long int AH_BH=AHigh*BHigh;
+  
+   
+
+  
+  unsigned long  long int AL_BLLOW=(AL_BL & maskLow4B);
+  unsigned long long int AL_BHHIGH=(AL_BH & maskHigh4B);
+  unsigned long long int AL_BHLOW=(AL_BH & maskHigh4B);
+
+  unsigned long long int AH_BLLOW=(AH_BL & maskLow4B);
+  unsigned long long int AL_BLHIGH=(AL_BL & maskHigh4B);
+  
+
+
+			   
+  unsigned long int test1 =0xABABABAB;
+  // unsigned long int test2 =0xFEFEFEFE;
+    
+  // result[0]=test1;
+  //  result[1]=test2;
+  unsigned long long int r2 = AL_BLHIGH+AL_BHLOW+AH_BLLOW;
+  
+  
+  *(unsigned long int*)&result[0]=(unsigned long int)(AL_BLLOW);
+  // *(unsigned long int*)&result[1]=r2;
+  *(unsigned long long int*)&result[4]=test1;
+
+  
+  // *(unsigned long long int*)&result[0]=test1;
+ 
+
+ 
+   
+}
 
 struct test_case {
   unsigned long long int a;
@@ -48,27 +103,30 @@ int main(int argc, char *argv[])
   SetCursorPosition(0, 0);
 
   for (i = 0; i < 6; ++i)
-  {
-    PutString("Test : ");
-    PutUnsignedLongLong(&cases[i].a);
-    PutString(" * ");
-    PutUnsignedLongLong(&cases[i].b); 
-    PutString("\r\n");
+    {
+      PutString("Test : ");
+      PutUnsignedLongLong(&cases[i].a);
+      PutString(" * ");
+      PutUnsignedLongLong(&cases[i].b); 
+      PutString("\r\n");
    
-    PutString("    == ");
-    PutUnsignedLongLong(&cases[i].rh);
-    PutUnsignedLongLong(&cases[i].rl);
-    PutString("\r\n");
+      PutString("    == ");
+      PutUnsignedLongLong(&cases[i].rh);
+      PutUnsignedLongLong(&cases[i].rl);
+      PutString("\r\n");
     
-    llmultiply(cases[i].a, cases[i].b, result);
+      cmultiply(cases[i].a, cases[i].b, result);
     
-    PutString("Result ");
-    PutUnsignedLongLong((unsigned long long int*)&result[8]);
-    PutUnsignedLongLong((unsigned long long int*)&result[0]); 
-    PutString("\r\n");
+      PutString("Result ");
+      PutUnsignedLongLong((unsigned long long int*)&result[8]);
+      PutUnsignedLongLong((unsigned long long int*)&result[0]); 
+      PutString("\r\n");
     
-    PutString("\r\n");
-  }
+      PutString("\r\n");
+    }
 
   return 0;
 }
+
+
+
