@@ -20,11 +20,20 @@ THR_PORT	EQU	BASE_PORT
 
 		GLOBAL	SerialPut
 
-SerialPut:	; <your code here>	; (1) Wait for THRE = 1
-		; <your code here>	; (2) Output character to UART
-		; <your code here>	; (3) Return to caller
+SerialPut:
 
-; ---------------------------------------------------------------------
+end:
+		mov dx,LSR_PORT
+		in al,dx
+		SHR al,5
+		and al,1
+		Jz end
+
+		mov dx, THR_PORT
+		mov al,[esp+4]	
+		out dx, al
+ret
+; 
 ; void interrupt SerialISR(void)
 ; ---------------------------------------------------------------------
 ; This is an Interrupt Service Routine (ISR) for
@@ -35,17 +44,36 @@ SerialPut:	; <your code here>	; (1) Wait for THRE = 1
 		EXTERN	QueueInsert	; (provided by LIBPC)
 
 SerialISR:	STI             	; Enable (higher-priority) IRQs 
+				; (1) Preserve all registers
+                pusha
 
-		; <your code here>	; (1) Preserve all registers 
-		; <your code here>	; (2) Get character from UART
+; (2) Get character from UART
+		mov dx,LSR_PORT
+		in al,dx
+		and al,1
+		Jz _Eoi
+
+		mov dx, RBR_PORT
+		in al, dx
+		mov [data],al ; nått åt det hålet??
+
+	
+		MOV edx, [inbound_queue]
+		push data
+		push edx	; 
+		CALL	QueueInsert
+        	ADD	ESP,8
 		; <your code here>	; (3) Put character into queue 
 		; <your code here>	; Param #2: address of data
 		; <your code here>	; Param #1: address of queue
 
-		CALL	QueueInsert
-		ADD	ESP,8
+		
 
+	
 _Eoi:		; <your code here>	; (4) Enable lower priority interrupts
-		; <your code here>	;       (Send Non-Specific EOI to PIC)
-		; <your code here>	; (5) Restore all registers
-		; <your code here>	; (6) Return to interrupted code
+
+	
+		mov al,0x20
+		out 0x20,al
+        	popa
+iret
