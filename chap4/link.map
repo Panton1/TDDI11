@@ -1,0 +1,482 @@
+Archive member included to satisfy reference by file (symbol)
+
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+                              main.o (OSInit)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_flag.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o) (_OS_FlagInit)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_mem.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o) (_OS_MemInit)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_q.o)
+                              serial.o (OSQCreate)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o)
+                              main.o (OSTaskCreate)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_time.o)
+                              serial.o (OSTimeDly)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_a.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o) (_OSStartHighRdy)
+/courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o) (_OSTaskStkInit)
+/courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                              (start)
+/courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+                              serial.o (IRQ2INT)
+/courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init_CRT)
+/courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+                              main.o (SetCursorVisible)
+/courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init8259)
+/courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init8253)
+/courses/TDDI11/sw/lib/elf/libepc.a(heap.o)
+                              main.o (malloc)
+/courses/TDDI11/sw/lib/elf/libepc.a(window.o)
+                              inbound.o (WindowCreate)
+/courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Check_CPU)
+/courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o) (ISR_PIC1)
+/courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+                              outbound.o (ScanCode2Ascii)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(ct_flags.o)
+                              outbound.o (__dj_ctype_flags)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(memcpy.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o) (_memcpy)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(memset.o)
+                              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o) (_memset)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(strcpy.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(window.o) (_strcpy)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(strlen.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(window.o) (_strlen)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(disable.o)
+                              serial.o (disable)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(enable.o)
+                              serial.o (enable)
+/courses/TDDI11/sw/lib/elf/djgpp/libc.a(djmd.o)
+                              /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memcpy.o) (___dj_movedata)
+
+Allocating common symbols
+Common symbol       size              file
+
+_OSTaskCtr          0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBCur           0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSCtxSwCtr         0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBList          0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBHighRdy       0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSQTbl             0x78              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSRdyTbl           0x8               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTaskIdleStk      0x800             /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSEventTbl         0xa0              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBFreeList      0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OldTickISR         0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+_OSRdyGrp           0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSIntExitY         0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSPrioCur          0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSQFreeList        0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSIdleCtr          0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSRunning          0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSMemTbl           0x64              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSPrioHighRdy      0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBPrioTbl       0x100             /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTickDOSCtr       0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+_OSLockNesting      0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTime             0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSFlagTbl          0x3c              /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSTCBTbl           0xe00             /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSIntNesting       0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSEventFreeList    0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSMemFreeList      0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+_OSFlagFreeList     0x4               /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+
+Discarded input sections
+
+ .eh_frame      0x0000000000000000       0x64 main.o
+ .eh_frame      0x0000000000000000       0x78 serial.o
+ .eh_frame      0x0000000000000000       0x74 inbound.o
+ .eh_frame      0x0000000000000000       0x54 outbound.o
+ .eh_frame      0x0000000000000000       0xd8 elapsed.o
+ .eh_frame      0x0000000000000000       0x54 packet.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+conventional     0x0000000000000000 0x00000000000a0000
+reserved         0x00000000000a0000 0x0000000000060000
+extended         0x0000000000100000 0x00000000fff00000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD serial.o
+LOAD inbound.o
+LOAD outbound.o
+LOAD elapsed.o
+LOAD packet.o
+LOAD isr.o
+LOAD /courses/TDDI11/sw/lib/elf/ucos_ii.a
+LOAD /courses/TDDI11/sw/lib/elf/libepc.a
+LOAD /courses/TDDI11/sw/lib/elf/djgpp/libc.a
+LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
+
+.text           0x0000000000000000     0x5e00
+                0x0000000000000000                text_frst = .
+ *(.start)
+ .start         0x0000000000000000        0x8 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000000000                start
+ *(.init)
+ *(.text)
+ .text          0x0000000000000008       0xe0 main.o
+                0x0000000000000033                main
+ .text          0x00000000000000e8      0x17e serial.o
+                0x00000000000000e8                SerialGet
+                0x0000000000000107                SerialPut
+                0x0000000000000156                SerialInit
+ .text          0x0000000000000266       0xb2 inbound.o
+                0x000000000000028f                PostText
+                0x00000000000002b1                InboundText
+ .text          0x0000000000000318      0x191 outbound.o
+                0x0000000000000318                OutboundThread
+ .text          0x00000000000004a9      0x2ef elapsed.o
+                0x00000000000004d2                PostTime
+                0x00000000000004f4                InboundTime
+                0x0000000000000570                ElapsedLocal
+ .text          0x0000000000000798      0x119 packet.o
+                0x0000000000000798                ReceivePackets
+                0x000000000000084a                SendPacket
+ *fill*         0x00000000000008b1        0xf 
+ .text          0x00000000000008c0       0x6d isr.o
+                0x00000000000008c0                OSKeyboardISR
+                0x00000000000008f5                OSSerialISR
+ *fill*         0x000000000000092d        0x3 
+ .text          0x0000000000000930      0xac0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+                0x0000000000000930                _OSMapTbl
+                0x0000000000000938                _OSUnMapTbl
+                0x0000000000000a38                OSInit
+                0x0000000000000c00                _OSIntEnter
+                0x0000000000000c1c                _OSIntExit
+                0x0000000000000cc4                _OSSchedLock
+                0x0000000000000ce8                _OSSchedUnlock
+                0x0000000000000d2c                OSStart
+                0x0000000000000db4                _OSTimeTick
+                0x0000000000000e74                _OSVersion
+                0x0000000000000e84                _OS_Dummy
+                0x0000000000000e8c                _OS_EventTaskRdy
+                0x0000000000000fd0                _OS_EventTaskWait
+                0x0000000000001094                _OS_EventTO
+                0x0000000000001120                _OS_EventWaitListInit
+                0x0000000000001180                _OS_Sched
+                0x0000000000001210                _OS_TaskIdle
+                0x000000000000122c                _OS_TCBInit
+ .text          0x00000000000013f0      0xb60 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_flag.o)
+                0x00000000000013f0                _OSFlagAccept
+                0x00000000000015a8                _OSFlagCreate
+                0x0000000000001614                _OSFlagDel
+                0x0000000000001748                _OSFlagPend
+                0x0000000000001a98                _OSFlagPost
+                0x0000000000001c9c                _OSFlagQuery
+                0x0000000000001de4                _OS_FlagInit
+                0x0000000000001edc                _OS_FlagUnlink
+ .text          0x0000000000001f50      0x320 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_mem.o)
+                0x0000000000001f50                _OSMemCreate
+                0x000000000000206c                _OSMemGet
+                0x00000000000020c4                _OSMemPut
+                0x0000000000002124                _OSMemQuery
+                0x00000000000021a8                _OS_MemInit
+ .text          0x0000000000002270      0x8b0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_q.o)
+                0x0000000000002270                _OSQAccept
+                0x00000000000022ec                OSQCreate
+                0x00000000000023fc                _OSQDel
+                0x0000000000002554                _OSQFlush
+                0x00000000000025ac                OSQPend
+                0x00000000000026e8                OSQPost
+                0x00000000000027ac                _OSQPostFront
+                0x0000000000002874                _OSQPostOpt
+                0x00000000000029ac                _OSQQuery
+                0x0000000000002ac4                _OS_QInit
+ .text          0x0000000000002b20      0xae0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o)
+                0x0000000000002b20                _OSTaskChangePrio
+                0x0000000000002ddc                OSTaskCreate
+                0x0000000000002ec4                _OSTaskCreateExt
+                0x0000000000003004                _OSTaskDel
+                0x0000000000003234                _OSTaskDelReq
+                0x00000000000032c4                _OSTaskResume
+                0x000000000000338c                _OSTaskStkChk
+                0x0000000000003474                _OSTaskSuspend
+                0x000000000000357c                _OSTaskQuery
+ .text          0x0000000000003600      0x2e0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_time.o)
+                0x0000000000003600                OSTimeDly
+                0x000000000000368c                _OSTimeDlyHMSM
+                0x00000000000037e0                _OSTimeDlyResume
+                0x00000000000038a4                OSTimeGet
+                0x00000000000038c4                _OSTimeSet
+ .text          0x00000000000038e0       0x68 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_a.o)
+                0x00000000000038e0                _OSStartHighRdy
+                0x00000000000038f5                _OSCtxSw
+                0x00000000000038fd                _OSIntCtxSw
+                0x000000000000391a                _OSTickISR
+ .text          0x0000000000003948      0x190 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+                0x0000000000003948                _OSTaskStkInit
+                0x0000000000003a8c                _OSInitHookBegin
+                0x0000000000003a94                _OSInitHookEnd
+                0x0000000000003a9c                _OSTaskCreateHook
+                0x0000000000003aa4                _OSTaskDelHook
+                0x0000000000003aac                _OSTaskSwHook
+                0x0000000000003ab4                _OSTaskStatHook
+                0x0000000000003abc                _OSTCBInitHook
+                0x0000000000003ac4                _OSTimeTickHook
+                0x0000000000003acc                _OSTaskIdleHook
+ .text          0x0000000000003ad8       0x50 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000003ad8                Init_CPU
+ .text          0x0000000000003b28      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+                0x0000000000003f38                IRQ2INT
+                0x0000000000003f4c                _GetISR
+                0x0000000000003f90                SetISR
+                0x0000000000003fc8                Init_IDT
+ .text          0x00000000000040c8      0x110 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+                0x00000000000040c8                Init_CRT
+                0x00000000000040fc                _LastMemoryAddress
+ .text          0x00000000000041d8      0x6e0 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+                0x00000000000041d8                SetCursorVisible
+                0x000000000000425c                _GetCursorRow
+                0x0000000000004270                _GetCursorCol
+                0x0000000000004284                SetCursorPosition
+                0x0000000000004328                ClearScreen
+                0x0000000000004390                _PutAttb
+                0x00000000000043dc                _PutCharAt
+                0x0000000000004408                _PutChar
+                0x000000000000448c                PutString
+                0x00000000000044c4                PutUnsigned
+                0x00000000000044fc                FormatUnsigned
+                0x000000000000458c                Unsigned2Ascii
+                0x0000000000004610                _Cell
+ .text          0x00000000000048b8       0xe0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+                0x00000000000048b8                Init8259
+ .text          0x0000000000004998       0xb0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+                0x0000000000004998                Init8253
+ .text          0x0000000000004a48      0x660 /courses/TDDI11/sw/lib/elf/libepc.a(heap.o)
+                0x0000000000004a48                malloc
+                0x0000000000004afc                free
+ .text          0x00000000000050a8      0x600 /courses/TDDI11/sw/lib/elf/libepc.a(window.o)
+                0x00000000000050ac                WindowCreate
+                0x0000000000005194                _WindowErase
+                0x0000000000005204                WindowSelect
+                0x0000000000005228                WindowSetCursor
+                0x0000000000005258                WindowPutChar
+                0x0000000000005338                WindowPutString
+ .text          0x00000000000056a8       0x98 /courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
+                0x00000000000056a8                Check_CPU
+ .text          0x0000000000005740       0x60 /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                0x0000000000005740                TimerTickISR
+                0x000000000000574c                KeyboardISR
+                0x000000000000576c                ISR_PIC1
+                0x0000000000005773                ISR_PIC2
+                0x000000000000577c                ___main
+                0x000000000000577d                inportb
+                0x0000000000005787                outportb
+                0x0000000000005799                _exit
+ .text          0x00000000000057a0      0x570 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+                0x00000000000057a0                ScanCodeRdy
+                0x00000000000057c4                GetScanCode
+                0x00000000000057f4                ScanCode2Ascii
+                0x00000000000059b4                SetsKybdState
+                0x0000000000005ba4                Enqueue
+ .text          0x0000000000005d10        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(ct_flags.o)
+ .text          0x0000000000005d10       0x1c /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memcpy.o)
+                0x0000000000005d10                _memcpy
+ .text          0x0000000000005d2c       0x40 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memset.o)
+                0x0000000000005d2c                _memset
+ .text          0x0000000000005d6c       0x28 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strcpy.o)
+                0x0000000000005d6c                _strcpy
+ .text          0x0000000000005d94       0x24 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strlen.o)
+                0x0000000000005d94                _strlen
+ .text          0x0000000000005db8       0x10 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(disable.o)
+                0x0000000000005db8                disable
+ .text          0x0000000000005dc8       0x10 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(enable.o)
+                0x0000000000005dc8                enable
+ .text          0x0000000000005dd8       0x28 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(djmd.o)
+                0x0000000000005dd8                ___dj_movedata
+                0x0000000000005dff                text_last = (. - 0x1)
+
+.data           0x0000000000005e00      0x8ea
+                0x0000000000005e00                data_frst = .
+ *(.data)
+ .data          0x0000000000005e00        0x0 main.o
+ .data          0x0000000000005e00        0x0 serial.o
+ .data          0x0000000000005e00        0x0 inbound.o
+ .data          0x0000000000005e00        0x1 outbound.o
+ *fill*         0x0000000000005e01        0x3 
+ .data          0x0000000000005e04        0xb elapsed.o
+ .data          0x0000000000005e0f        0x0 packet.o
+ *fill*         0x0000000000005e0f        0x1 
+ .data          0x0000000000005e10        0x0 isr.o
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_flag.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_mem.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_q.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_time.o)
+ .data          0x0000000000005e10        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_a.o)
+ .data          0x0000000000005e10       0x10 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+ .data          0x0000000000005e20       0x20 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000005e3e                code_selector
+ .data          0x0000000000005e40       0x90 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+ .data          0x0000000000005ed0       0x10 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+ .data          0x0000000000005ee0       0x30 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+ .data          0x0000000000005f10        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+ .data          0x0000000000005f10        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+ .data          0x0000000000005f10       0x10 /courses/TDDI11/sw/lib/elf/libepc.a(heap.o)
+ .data          0x0000000000005f20        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(window.o)
+ .data          0x0000000000005f20        0xc /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                0x0000000000005f20                msec
+                0x0000000000005f24                old_tick_isr
+                0x0000000000005f28                old_kybd_isr
+ .data          0x0000000000005f2c      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+ .data          0x00000000000064cc      0x204 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(ct_flags.o)
+                0x00000000000064cc                __dj_ctype_flags
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memcpy.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memset.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strcpy.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strlen.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(disable.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(enable.o)
+ .data          0x00000000000066d0        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(djmd.o)
+ *(.rodata)
+ .rodata        0x00000000000066d0        0x7 inbound.o
+ .rodata        0x00000000000066d7        0x6 outbound.o
+ .rodata        0x00000000000066dd        0xd elapsed.o
+ *(.rodata.str1.1)
+ *(.rodata.str1.32)
+                0x00000000000066e9                data_last = (. - 0x1)
+
+.bss            0x0000000000006700     0x2350
+                0x0000000000006700                bss_frst = .
+ *(.bss)
+ .bss           0x0000000000006700        0x0 main.o
+ .bss           0x0000000000006700       0x70 serial.o
+                0x0000000000006700                com1_queue
+ *fill*         0x0000000000006770       0x10 
+ .bss           0x0000000000006780       0x70 inbound.o
+ *fill*         0x00000000000067f0       0x10 
+ .bss           0x0000000000006800       0x70 outbound.o
+                0x0000000000006800                kybd_queue
+ *fill*         0x0000000000006870       0x10 
+ .bss           0x0000000000006880       0x80 elapsed.o
+ .bss           0x0000000000006900        0x0 packet.o
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_flag.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_mem.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_q.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_time.o)
+ .bss           0x0000000000006900        0x0 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+ .bss           0x0000000000006900      0x800 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+ .bss           0x0000000000007100        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+ .bss           0x0000000000007100        0x8 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+ .bss           0x0000000000007108        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+ .bss           0x0000000000007108        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+ .bss           0x0000000000007108        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(heap.o)
+ .bss           0x0000000000007108        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(window.o)
+ .bss           0x0000000000007108       0x34 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(ct_flags.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memcpy.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(memset.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strcpy.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(strlen.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(disable.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(enable.o)
+ .bss           0x000000000000713c        0x0 /courses/TDDI11/sw/lib/elf/djgpp/libc.a(djmd.o)
+ *(COMMON)
+ COMMON         0x000000000000713c     0x190c /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_core.o)
+                0x000000000000713c                _OSTaskCtr
+                0x0000000000007140                _OSTCBCur
+                0x0000000000007144                _OSCtxSwCtr
+                0x0000000000007148                _OSTCBList
+                0x000000000000714c                _OSTCBHighRdy
+                0x0000000000007150                _OSQTbl
+                0x00000000000071c8                _OSRdyTbl
+                0x00000000000071d0                _OSTaskIdleStk
+                0x00000000000079d0                _OSEventTbl
+                0x0000000000007a70                _OSTCBFreeList
+                0x0000000000007a74                _OSRdyGrp
+                0x0000000000007a78                _OSIntExitY
+                0x0000000000007a7c                _OSPrioCur
+                0x0000000000007a80                _OSQFreeList
+                0x0000000000007a84                _OSIdleCtr
+                0x0000000000007a88                _OSRunning
+                0x0000000000007a8c                _OSMemTbl
+                0x0000000000007af0                _OSPrioHighRdy
+                0x0000000000007af4                _OSTCBPrioTbl
+                0x0000000000007bf4                _OSLockNesting
+                0x0000000000007bf8                _OSTime
+                0x0000000000007bfc                _OSFlagTbl
+                0x0000000000007c38                _OSTCBTbl
+                0x0000000000008a38                _OSIntNesting
+                0x0000000000008a3c                _OSEventFreeList
+                0x0000000000008a40                _OSMemFreeList
+                0x0000000000008a44                _OSFlagFreeList
+ COMMON         0x0000000000008a48        0x8 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_cpu_c.o)
+                0x0000000000008a48                _OldTickISR
+                0x0000000000008a4c                _OSTickDOSCtr
+                0x0000000000008a4f                bss_last = (. - 0x1)
+
+/DISCARD/
+ *(.eh_frame)
+                0x0000000000008a50                stack_frst = (bss_last + 0x1)
+                0x0000000000010a4f                stack_last = (bss_last + 0x8000)
+                0x0000000000010a50                heap_frst = (stack_last + 0x1)
+OUTPUT(embedded.bin binary)
+
+.debug_info     0x0000000000000000     0x2ab5
+ .debug_info    0x0000000000000000      0x657 main.o
+ .debug_info    0x0000000000000657      0x6b8 serial.o
+ .debug_info    0x0000000000000d0f      0x72b inbound.o
+ .debug_info    0x000000000000143a      0x7a7 outbound.o
+ .debug_info    0x0000000000001be1      0x848 elapsed.o
+ .debug_info    0x0000000000002429      0x68c packet.o
+
+.debug_abbrev   0x0000000000000000      0x875
+ .debug_abbrev  0x0000000000000000      0x12a main.o
+ .debug_abbrev  0x000000000000012a      0x15d serial.o
+ .debug_abbrev  0x0000000000000287      0x178 inbound.o
+ .debug_abbrev  0x00000000000003ff      0x173 outbound.o
+ .debug_abbrev  0x0000000000000572      0x1a1 elapsed.o
+ .debug_abbrev  0x0000000000000713      0x162 packet.o
+
+.debug_aranges  0x0000000000000000       0xc0
+ .debug_aranges
+                0x0000000000000000       0x20 main.o
+ .debug_aranges
+                0x0000000000000020       0x20 serial.o
+ .debug_aranges
+                0x0000000000000040       0x20 inbound.o
+ .debug_aranges
+                0x0000000000000060       0x20 outbound.o
+ .debug_aranges
+                0x0000000000000080       0x20 elapsed.o
+ .debug_aranges
+                0x00000000000000a0       0x20 packet.o
+
+.debug_line     0x0000000000000000      0x55d
+ .debug_line    0x0000000000000000       0xc4 main.o
+ .debug_line    0x00000000000000c4       0xe2 serial.o
+ .debug_line    0x00000000000001a6       0xaa inbound.o
+ .debug_line    0x0000000000000250      0x127 outbound.o
+ .debug_line    0x0000000000000377      0x118 elapsed.o
+ .debug_line    0x000000000000048f       0xce packet.o
+
+.debug_str      0x0000000000000000     0x1e50
+ .debug_str     0x0000000000000000      0x4da main.o
+ .debug_str     0x00000000000004da      0x502 serial.o
+ .debug_str     0x00000000000009dc      0x4f4 inbound.o
+ .debug_str     0x0000000000000ed0      0x576 outbound.o
+ .debug_str     0x0000000000001446      0x542 elapsed.o
+ .debug_str     0x0000000000001988      0x4c8 packet.o
+
+.comment        0x0000000000000000       0x6c
+ .comment       0x0000000000000000       0x12 main.o
+ .comment       0x0000000000000012       0x12 serial.o
+ .comment       0x0000000000000024       0x12 inbound.o
+ .comment       0x0000000000000036       0x12 outbound.o
+ .comment       0x0000000000000048       0x12 elapsed.o
+ .comment       0x000000000000005a       0x12 packet.o

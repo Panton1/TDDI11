@@ -57,28 +57,25 @@ void ReceivePackets(void)
 
 
 void SendPacket(int type, BYTE8 *bfr, int byte_C)
-{ int loop;
+{ 
 
-   OSSemCreate(1); //PERFECT?
   
-   OSSemPend(OSSemCreate(1), 0 , *err);
-
-  ///HMMMMMMMM 
-  /// OS_EVENT *OSSemCreate(int count);,CREATE LOCK
-  /// OSSemPend(OS_EVENT *semaphore, int timeout, BYTE8 *err);, LOCK
-  /// OSSemPost(OS_EVENT *semaphore);, UNLOCK???
     SerialPut(0xff); 
     SerialPut(type);
     SerialPut(byte_C);
     
-for (loop = 0; loop < byte_C;loop++) {
-    SerialPut(bfr[loop]);
+for (int i = 0; i < byte_C;i++) {
+    SerialPut(bfr[i]);
  }
 
-  
-  /*
-   * Your code here !
-   */
 
- OSSemPost(OSSemCreate(1));
+
+
+
+  /*  Uppgift 2
+  OS_EVENT *semaphore_mlock = *OSSemCreate(1); //mutexlock alltså sätt räknare till ett
+  OSSemPend(semaphore, 0 , *err); //motsvarar semadown?
+  OSSemPost(OSSemCreate(1)); //motsvarar sema up?
+
+  */
 }
