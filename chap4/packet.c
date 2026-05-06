@@ -7,8 +7,12 @@
 #include "elapsed.h"
 #include "serial.h"
 
+OS_EVENT *semaphore;
+  
 void ReceivePackets(void)
 {
+  semaphore = OSSemCreate(1); //mutexlock alltså sätt räknare till ett
+
   SerialInit() ;
   
   for (;;)
@@ -59,6 +63,8 @@ void ReceivePackets(void)
 void SendPacket(int type, BYTE8 *bfr, int byte_C)
 { 
 
+  BYTE8 err;
+  OSSemPend(semaphore, 0 , &err); //motsvarar semadown?
   
     SerialPut(0xff); 
     SerialPut(type);
@@ -66,16 +72,10 @@ void SendPacket(int type, BYTE8 *bfr, int byte_C)
     
 for (int i = 0; i < byte_C;i++) {
     SerialPut(bfr[i]);
+    OSTimeDly(10);
  }
+  OSSemPost(semaphore); //motsvarar sema up?
 
 
-
-
-
-  /*  Uppgift 2
-  OS_EVENT *semaphore_mlock = *OSSemCreate(1); //mutexlock alltså sätt räknare till ett
-  OSSemPend(semaphore, 0 , *err); //motsvarar semadown?
-  OSSemPost(OSSemCreate(1)); //motsvarar sema up?
-
-  */
+  
 }
