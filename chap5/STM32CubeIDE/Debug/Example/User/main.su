@@ -1,0 +1,14 @@
+/home/antpe029/TDDI11/chap5/Src/main.c:95:5:main	32	static
+/home/antpe029/TDDI11/chap5/Src/main.c:247:13:Clear_Display_Welcome	8	static
+/home/antpe029/TDDI11/chap5/Src/main.c:258:13:Clear_Display_Board	32	static
+/home/antpe029/TDDI11/chap5/Src/main.c:281:13:Display_Text	16	static
+/home/antpe029/TDDI11/chap5/Src/main.c:289:13:Display_Other_Text	16	static
+/home/antpe029/TDDI11/chap5/Src/main.c:297:6:Initialize_Board	24	static
+/home/antpe029/TDDI11/chap5/Src/main.c:305:16:Check_Move_Validity	32	static
+/home/antpe029/TDDI11/chap5/Src/main.c:334:16:Check_Win	24	static
+/home/antpe029/TDDI11/chap5/Src/main.c:375:16:Check_Full	24	static
+/home/antpe029/TDDI11/chap5/Src/main.c:407:6:SystemClock_Config	104	static
+/home/antpe029/TDDI11/chap5/Src/main.c:463:13:SystemHardwareInit	72	static
+/home/antpe029/TDDI11/chap5/Src/main.c:556:6:Error_Handler	8	static
+/home/antpe029/TDDI11/chap5/Src/main.c:571:6:TicTacToe_PB_Callback	16	static
+/home/antpe029/TDDI11/chap5/Src/main.c:584:6:TicTacToe_TS_Callback	16	static

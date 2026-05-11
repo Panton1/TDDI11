@@ -1,0 +1,14 @@
+/home/antpe029/TDDI11/chap5/Src/main.c:95:5:main	27
+/home/antpe029/TDDI11/chap5/Src/main.c:247:13:Clear_Display_Welcome	1
+/home/antpe029/TDDI11/chap5/Src/main.c:258:13:Clear_Display_Board	5
+/home/antpe029/TDDI11/chap5/Src/main.c:281:13:Display_Text	1
+/home/antpe029/TDDI11/chap5/Src/main.c:289:13:Display_Other_Text	1
+/home/antpe029/TDDI11/chap5/Src/main.c:297:6:Initialize_Board	2
+/home/antpe029/TDDI11/chap5/Src/main.c:305:16:Check_Move_Validity	8
+/home/antpe029/TDDI11/chap5/Src/main.c:334:16:Check_Win	15
+/home/antpe029/TDDI11/chap5/Src/main.c:375:16:Check_Full	3
+/home/antpe029/TDDI11/chap5/Src/main.c:407:6:SystemClock_Config	4
+/home/antpe029/TDDI11/chap5/Src/main.c:463:13:SystemHardwareInit	12
+/home/antpe029/TDDI11/chap5/Src/main.c:556:6:Error_Handler	1
+/home/antpe029/TDDI11/chap5/Src/main.c:571:6:TicTacToe_PB_Callback	2
+/home/antpe029/TDDI11/chap5/Src/main.c:584:6:TicTacToe_TS_Callback	2
